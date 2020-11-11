@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { API } from "./../config";
 import Layout from "./../core/Layout";
+import { signup } from "./../auth";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -34,21 +34,6 @@ const Signup = () => {
     });
   };
 
-  const signup = (user) => {
-    return fetch(`${API}/auth/signup`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   const showError = () => (
     <div
       className="alert alert-danger"
@@ -67,7 +52,7 @@ const Signup = () => {
     </div>
   );
 
-  const sigUpForm = () => (
+  const signUpForm = () => (
     <form>
       <div className="form-group">
         <label className="text-muted">Name</label>
@@ -111,7 +96,7 @@ const Signup = () => {
     >
       {showSuccess()}
       {showError()}
-      {sigUpForm()}
+      {signUpForm()}
     </Layout>
   );
 };

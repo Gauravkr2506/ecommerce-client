@@ -1,6 +1,8 @@
 import React from "react";
 import Menu from "./Menu";
 
+import "././../style.css";
+
 export default function Layout({
   title = "Title",
   description = "Description",
