@@ -11,7 +11,7 @@ export default function Card({ product }) {
 
         <div className="card-body">
           <ShowImage url="product" item={product} />
-          <p>{product.description}</p>
+          <p>{product.description.substring(0, 100)}</p>
           <p>${product.price}</p>
           <Link to="/">
             <button className="btn btn-outline-primary my-2 mb-2 mr-2">

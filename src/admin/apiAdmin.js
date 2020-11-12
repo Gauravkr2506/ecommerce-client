@@ -32,15 +32,15 @@ export const createProduct = (userId, token, product) => {
     });
 };
 
-export const getCategories = (userId, token, product) => {
+export const getCategories = () => {
   return fetch(`${API}/categories`, {
     method: "GET",
-    headers: {
-      Accept: "application/json",
-      // "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
-    },
-    body: product,
+    // headers: {
+    //   Accept: "application/json",
+    //   // "Content-Type": "application/json",
+    //   Authorization: "Bearer " + token,
+    // },
+    // body: product,
   })
     .then((response) => response.json())
     .catch((err) => {
