@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import Layout from "./Layout";
 import Card from "./Card";
+import Search from "./Search";
 
 import { getProducts } from "./apiCore";
 const Home = () => {
@@ -40,10 +41,13 @@ const Home = () => {
       description="Node React Ecommerce"
       className="container-fluid"
     >
+      <Search />
       <h2 className="mb-4">Best Sellers</h2>
       <div className="row">
         {productBySell.map((product, index) => (
-          <Card key={index} product={product} />
+          <div key={index} className="col-4 mb-3">
+            <Card product={product} showViewProductButton={true} />
+          </div>
         ))}
       </div>
 
@@ -51,7 +55,9 @@ const Home = () => {
 
       <div className="row">
         {productByArrival.map((product, index) => (
-          <Card key={index} product={product} />
+          <div key={index} className="col-4 mb-3">
+            <Card product={product} showViewProductButton={true} />
+          </div>
         ))}
       </div>
     </Layout>

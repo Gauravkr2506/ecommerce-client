@@ -10,6 +10,8 @@ import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
 import Home from "./core/Home";
 import Shop from "./core/Shop";
+import Product from "./core/Product";
+import Cart from "./core/Cart";
 // import Menu from "./core/Menu";
 
 export default function Routes() {
@@ -26,6 +28,8 @@ export default function Routes() {
         <AdminRoute path="/create/product" exact component={AddProduct} />
         <Route path="/" exact component={Home} />
         <Route path="/shop" exact component={Shop} />
+        <Route path="/product/:productId" exact component={Product} />
+        <Route path="/cart" exact component={Cart} />
       </Switch>
     </BrowserRouter>
   );

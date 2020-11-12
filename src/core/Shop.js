@@ -123,7 +123,9 @@ export default function Shop() {
           <div className="row">
             {filteredResults.map((product, index) => (
               //   <div key={index} className="col-6 mb-3">
-              <Card key={index} product={product} />
+              <div key={index} className="col-4 mb-3">
+                <Card product={product} showViewProductButton={true} />
+              </div>
               //   </div>
             ))}
           </div>
